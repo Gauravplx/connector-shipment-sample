@@ -1,0 +1,18 @@
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+
+#kafka:
+#  producer:
+#    bootstrap-servers: localhost:9092
+#    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#  consumer:
+#    bootstrap-servers: localhost:9092
+#    group-id: source.process
+#    schema-registry-url: ${SCHEMA_REGISTRY_URL:'http://localhost:8081'}
+#    key-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+#    value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
