@@ -16,6 +16,7 @@
 	<properties>
 <!--		<avro.version>3.1.1</avro.version>-->
 <!--		<kafka.version>2.0.1</kafka.version>-->
+		<joda-time>2.9.4</joda-time>
 		<java.version>8</java.version>
 	</properties>
 	<dependencies>
@@ -98,6 +99,18 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.14.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

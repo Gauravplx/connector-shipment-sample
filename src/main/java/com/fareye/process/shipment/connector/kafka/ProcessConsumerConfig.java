@@ -19,8 +19,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
-@EnableKafka
 @Configuration
+@EnableKafka
 public class ProcessConsumerConfig {
 
 
@@ -53,10 +53,10 @@ public class ProcessConsumerConfig {
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "groupId");
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         props.put(ConsumerConfig.MAX_PARTITION_FETCH_BYTES_CONFIG,5 *ConsumerConfig.DEFAULT_MAX_PARTITION_FETCH_BYTES);
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
         props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "false");
-        props.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "localhost:8081");
+        props.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://172.16.19.137:8081");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"latest");
         return new DefaultKafkaConsumerFactory<>(props);
     }
