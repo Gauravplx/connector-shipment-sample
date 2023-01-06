@@ -1,0 +1,21 @@
+syntax = "proto3";
+package shipment.service;
+message ProcessVersionId{
+    int64 processVersionId = 1;
+    int64 companyId = 2;
+}
+
+message ProcessVersionDTO{
+    int64 id = 1;
+    int64 processMasterId = 2;
+    int32 versionCount = 3;
+    string process = 4;
+    string type = 5;
+    int64 companyId = 6;
+    int64 createdBy = 7;
+}
+
+
+service ProcessShipmentConnectorService{
+    rpc getProcessVersionDetails(ProcessVersionId) returns (ProcessVersionDTO);
+}
